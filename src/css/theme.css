@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+@import '../css/fonts/fonts.css';
+
+@theme{
+    --color-light-primary: #000000;
+    --color-light-secondary: #3C3C43;
+    --color-light-tertiary: #C4C4C6;
+    --color-light-quaternary: #EBEBEC;
+
+    --color-dark-primary: #FFFFFF;
+    --color-dark-secondary: #EBEBEC;
+    --color-dark-tertiary: #C4C4C6;
+    --color-darks-quaternary: #3C3C43;
+
+    --color-solid-1: #48319D;
+    --color-solid-2: #1F1D47;
+    --color-solid-3: #C427FB;
+    --color-solid-4: #E0D9FF;
+
+    --color-linear-1-primary: #2E335A;
+    --color-linear-1-secondary: #1C1B33;
+
+    --color-linear-2-primary: #5936B4;
+    --color-linear-2-secondary: #362A84;
+
+    --color-linear-3-primary: #3658B1;
+    --color-linear-3-secondary: #C159EC;
+
+    --color-linear-4-primary: #AEC9FF;
+    --color-linear-4-secondary: #083072;
+    
+    --color-radial-primary: #F7CBFD;
+    --color-radial-secondary: #7758D1;
+
+    --color-angular-primary: #612FAB;
+
+    --font-custom-light:'QuicsandLight', sans-serif; 
+    --font-custom-regular:'QuicsandRegular', sans-serif; 
+    --font-custom-medium:'QuicsandMedium', sans-serif; 
+    --font-custom-semibold:'QuicsandSemiBold', sans-serif; 
+    --font-custom-bold:'QuicsandBold', sans-serif; 
+}
