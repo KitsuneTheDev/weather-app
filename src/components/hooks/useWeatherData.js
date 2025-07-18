@@ -7,7 +7,7 @@ const [loading, setLoading] = useState(false);
 const [controller, setController] = useState(null);
 
 const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
-const location = 'Eskisehir';
+const location = 'Ankara';
 function get() {
     if(controller) {
         controller.abort();

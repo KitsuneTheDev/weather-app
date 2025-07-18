@@ -9,12 +9,12 @@ function WeatherProvider({ children }) {
 
     const [weatherData, setWeatherData] = useState(null);
 
-    useEffect(() => {
+    /*useEffect(() => {
         get().then((results) => {
         
         setWeatherData(results);
     })
-    }, [])
+    }, [])*/
 
     console.log("weatherData -->", weatherData);
 
