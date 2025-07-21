@@ -38,5 +38,10 @@
     --font-custom-regular:'QuicksandRegular', sans-serif; 
     --font-custom-medium:'QuicksandMedium', sans-serif; 
     --font-custom-semibold:'QuicksandSemiBold', sans-serif; 
-    --font-custom-bold:'QuicksandBold', sans-serif; 
+    --font-custom-bold:'QuicksandBold', sans-serif;
+
+    --spacing-friend: 5px;
+    --spacing-collegue: 16px;
+    --spacing-social: 51px;
+    --spacing-boss: 102px;
 }
