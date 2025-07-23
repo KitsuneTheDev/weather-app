@@ -1,52 +1,27 @@
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
-export function useWeatherData(baseUrl) {
+export function useWeatherData() {
 
-const [error, setError] = useState(null);
-const [loading, setLoading] = useState(false);
-const [controller, setController] = useState(null);
+    const [location, setLocation] = useState("Ankara");
+    const [isToday, setIsToday] = useState(0);
 
-const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
-const location = 'Ankara';
-function get() {
-    if(controller) {
-        controller.abort();
-    }
+    const baseUrl = 'http://api.weatherapi.com/v1';
+    const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
-    const newController = new AbortController();
-    setController(newController);
-    const signal = newController.signal;
+    const {
+        data: weatherData,
+        isError,
+        isPending,
+    } = useQuery({
+        queryKey: ["fetchWeather", { location }],
+        queryFn: async () => {
+            const response = await fetch(`${baseUrl}/current.json?key=${apiKey}&q=${location}&aqi=no`);
+            const weatherData = await response.json();
+            return weatherData;
+        }
+    });
 
-    return new Promise((resolve, reject) => {
-        fetch(`${baseUrl}/current.json?key=${apiKey}&q=${location}&aqi=no`, {
-            method: 'GET',
-            headers: {
-                "Authorization": `Bearer ${apiKey}`,
-                "Content-Type": "application/json",
-            },
-            signal: signal,
-        }).then(response => {
-            if(!response.ok) {
-                return reject(response.status);
-            }
-
-            return response.json();
-        }).then(data => {
-            if(!data) {
-                return reject(data);
-            }
-            console.log("Fetched data -->", data);
-            const newResults = data;
-            console.log("newResults", newResults);
-            return resolve(newResults);
-        }).catch(error => {
-            return reject(error);
-        }).finally(() => {
-            return;
-        })
-    })
-}
-
-    return {get}
+    return { weatherData, isError, isPending, setLocation, setIsToday, isPending };
 
 }

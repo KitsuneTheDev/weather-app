@@ -1,0 +1,10 @@
+.side-container{
+    background: 
+        linear-gradient(to right bottom, var(--color-linear-1-secondary), var(--color-linear-4-secondary), var(--color-linear-3-primary));
+}
+
+@media(max-width:1023px) {
+    .side-container{
+        background: none;
+    }
+}
