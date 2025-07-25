@@ -15,9 +15,7 @@ function WeatherProvider({ children }) {
             detailYear: dayjs().format('YYYY'),
         }
     })
-    const { weatherData, isError, isPending, setLocation, setIsToday } = useWeatherData();
-
-    console.log(weatherData, isError, isPending);
+    const { weatherData, weatherHistory, weatherForecast, isHistoryError, isHistoryLoading, isDataError, isDataLoading, isForecastError, isForecastLoading, location, setLocation } = useWeatherData();
 
     console.log(weatherData?.current.last_updated);
     useEffect(() => {
@@ -28,6 +26,17 @@ function WeatherProvider({ children }) {
 
     const values = {
         today,
+        weatherData,
+        weatherHistory,
+        weatherForecast,
+        isDataError,
+        isDataLoading,
+        isHistoryError,
+        isHistoryLoading,
+        isForecastError,
+        isForecastLoading,
+        location,
+        setLocation,
     };
 
     return (

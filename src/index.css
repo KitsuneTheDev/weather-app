@@ -11,3 +11,33 @@ html, body {
     height: 100%;
     width: 100%;
 }
+
+.glass{
+    --border-width: 3px;
+    position: relative;
+    border-radius: 1rem;
+    background: hsl(from var(--color-light-secondary) h s l / 0.2);
+    backdrop-filter: blur(4px);
+
+    /*background-color: var(--color-light-secondary);
+    border: transparent 2px solid;
+    background:
+        radial-gradient(circle at 80% 170%, var(--color-light-tertiary), transparent) padding-box,
+        linear-gradient(var(--color-light-secondary), var(--color-light-tertiary)) border-box;
+    background-size: 150%;
+    background-position: center;*/
+}
+
+.glass::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border: transparent var(--border-width) solid;
+    border-radius: inherit;
+    background: linear-gradient(var(--color-light-tertiary), var(--color-light-quaternary)) border-box;
+    mask: 
+        linear-gradient(rgb(0 0 0 / 0.3), transparent) border-box,
+        linear-gradient(rgb(0 0 0 / 1), transparent) padding-box;
+    mask-composite: subtract;
+}

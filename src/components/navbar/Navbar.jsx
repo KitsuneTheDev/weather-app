@@ -53,9 +53,12 @@ export default function Navbar() {
                     lg:text-lg 
                     xl:text-lg'>Calendar</p> 
                 </div>
-                <div className="footer fixed bottom-collegue left-collegue flex items-center">
+                <div className="footer fixed bottom-friend left-friend flex justify-start
+                md:bottom-friend md:left-friend
+                lg:bottom-collegue lg:left-collegue
+                xl:bottom-collegue xl:left-collegue">
                     <LiaCopyrightSolid fill="var(--color-solid-2)" size={18} className="relative" />
-                    <p className=" font-custom-light text-solid-2 pl-friend text-xs
+                    <p className=" font-custom-light text-solid-2 text-xs
                     md:text-xs
                     lg:text-sm
                     xl:text-sm">All rights reserved</p>

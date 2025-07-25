@@ -1,6 +1,15 @@
 .side-container{
-    background: 
-        linear-gradient(to right bottom, var(--color-linear-1-secondary), var(--color-linear-4-secondary), var(--color-linear-3-primary));
+    background-color: hsl(from var(--color-light-tertiary) h s l / 0.6);
+}
+
+.layout-container{
+    background-image: url("/backgrounds/mountains.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aside-container{
+    background-color: hsl(from var(--color-light-tertiary) h s l / 0.6);
 }
 
 @media(max-width:1023px) {
