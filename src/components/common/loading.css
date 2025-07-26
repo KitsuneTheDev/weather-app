@@ -1,5 +1,5 @@
 .loading-icon{
-    animation: spin 2s ease-in-out infinite;
+    animation: spin 2s linear infinite;
 }
 
 @keyframes spin{

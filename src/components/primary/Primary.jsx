@@ -1,4 +1,3 @@
-import "./primary.css";
 import { useWeather } from "../../context/WeatherContext.jsx";
 import WeatherCard from '../weatherCard/WeatherCard.jsx';
 import Graph from '../graph/Graph.jsx';
@@ -94,7 +93,7 @@ Primary.Default = () => {
                     </div>
                     }
                 </div>
-                <div className="graph-container">
+                <div className="graph-container h-1/2">
                     <Graph data={weatherForecast?.forecast.forecastday.map((day, index) => {
                         return day;
                     })} />

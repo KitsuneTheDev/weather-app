@@ -1,3 +1,4 @@
+import './loading.css';
 import { LuLoaderCircle } from "react-icons/lu";
 
 export default function Loading() {
