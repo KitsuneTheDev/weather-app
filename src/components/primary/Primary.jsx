@@ -57,7 +57,7 @@ Primary.Default = () => {
                             Today overview
                         </h3>
                     </div>
-                    {isDataLoading || isHistoryLoading ? <Loading /> :
+                    {isDataLoading || isHistoryLoading || isForecastLoading ? <Loading /> :
                     <div className={`cards-body grid grid-cols-1 grid-rows-4 gap-friend w-[100%] h-full pl-collegue pr-collegue mb-collegue
                     md:mb-collegue md:grid-cols-1 md:grid-rows-4 md:gap-social
                     lg:mb-social lg:grid-cols-1 lg:grid-rows-4 lg:gap-social
@@ -93,7 +93,10 @@ Primary.Default = () => {
                     </div>
                     }
                 </div>
-                <div className="graph-container h-1/2">
+                <div className="graph-container h-[40%] w-[96%] hidden
+                md:hidden
+                lg:flex lg:items-center lg:mb-boss
+                xl:block">
                     <Graph data={weatherForecast?.forecast.forecastday.map((day, index) => {
                         return day;
                     })} />
