@@ -1,11 +1,21 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useWeatherData } from "../components/hooks/useWeatherData.js";
+import { cityInfo } from '../constant/cityInfo.js'; 
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 const WeatherContext = createContext();
 
 function WeatherProvider({ children }) {
 
+
+    const [time, setTime] = useState(() => {
+        return dayjs().tz("America/New_york").format('HH:mm');
+    })
     const [today, setToday] = useState(() => {
         
         return {
@@ -36,6 +46,8 @@ function WeatherProvider({ children }) {
         isForecastError,
         isForecastLoading,
         location,
+        time,
+        cityInfo,
         setLocation,
     };
 

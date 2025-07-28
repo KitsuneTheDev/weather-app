@@ -18,7 +18,9 @@ Primary.Default = () => {
         return(
         <div className="primary-container h-full
         xl:h-full xl:w-50%">
-            <div className="primary-header w-full h-boss border-b-[2px] box-border border-light-tertiary flex justify-between">
+            <div className="primary-header w-full h-boss border-b-[2px] box-border border-light-tertiary flex justify-between fixed top-boss
+            lg:static
+            xl:static ">
                 <div className="date-container pl-collegue pt-collegue
                 xl:left-boss xl:top-collegue">
                     <div className="date-header">
@@ -44,8 +46,12 @@ Primary.Default = () => {
                     </div>
                 </div>
             </div>
-            <div className="primary-body w-full h-full">
-                <div className="cards-container w-full h-1/2 flex flex-col items-center">
+            <div className="primary-body w-full h-[calc(100%+var(--spacing-boss))]
+            lg:h-[calc(100%-var(--spacing-boss))]
+            xl:h-[calc(100%-var(--spacing-boss))] ">
+                <div className="cards-container w-full h-5/6 flex flex-col items-center mb-boss
+                lg:h-13/20 lg:mb-0
+                xl:h-13/20 xl:mb-0 ">
                     <div className="cards-header h-social
                     md:h-boss
                     lg:h-boss
@@ -59,7 +65,7 @@ Primary.Default = () => {
                     </div>
                     {isDataLoading || isHistoryLoading || isForecastLoading ? <Loading /> :
                     <div className={`cards-body grid grid-cols-1 grid-rows-4 gap-friend w-[100%] h-full pl-collegue pr-collegue mb-collegue
-                    md:mb-collegue md:grid-cols-1 md:grid-rows-4 md:gap-social
+                    md:mb-collegue md:grid-cols-1 md:grid-rows-4 md:gap-collegue
                     lg:mb-social lg:grid-cols-1 lg:grid-rows-4 lg:gap-social
                     xl:mb-social xl:grid-cols-2 xl:grid-rows-2 xl:gap-social`}>
                         <WeatherCard 
