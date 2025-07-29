@@ -1,10 +1,15 @@
 import dayjs from "dayjs";
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { cityInfo } from "../../constant/cityInfo.js";
 
 export function useWeatherData() {
 
-    const [location, setLocation] = useState("Istanbul");
+    const [location, setLocation] = useState(() => {
+        const savedLocation = JSON.parse(localStorage.getItem('savedInfo'))?.location;
+        if(!savedLocation) return cityInfo[0].city;
+        return savedLocation;
+    });
     const [today, setToday] = useState(0);
     const [yesterday, setYesterday] = useState(() => {
         return dayjs().subtract(1, "day").format("YYYY-MM-DD");
@@ -27,6 +32,7 @@ export function useWeatherData() {
     } = useQuery({
         queryKey: ["fetchWeather", { location, today }],
         queryFn: async () => {
+            console.log("fetching...");
             const response = await fetch(`${baseUrl}/current.json?key=${apiKey}&q=${location}&aqi=no`);
             const weatherData = await response.json();
             return weatherData;

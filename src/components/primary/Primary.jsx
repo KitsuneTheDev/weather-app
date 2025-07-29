@@ -1,5 +1,6 @@
 import { useWeather } from "../../context/WeatherContext.jsx";
 import WeatherCard from '../weatherCard/WeatherCard.jsx';
+import CustomDropdown from "../common/CustomDropdown.jsx";
 import Graph from '../graph/Graph.jsx';
 import Loading from '../common/Loading.jsx';
 import { PiWind, PiSun, PiWaves, PiArrowsIn } from "react-icons/pi";
@@ -10,7 +11,7 @@ export default function Primary() {}
 
 Primary.Default = () => {
 
-    const { today:{headerDate, detailDate, detailDay, detailYear}, weatherData, weatherHistory, weatherForecast, isDataLoading, isHistoryLoading, isForecastError, isForecastLoading, location } = useWeather();
+    const { today:{headerDate, detailDate, detailDay, detailYear}, weatherData, weatherHistory, weatherForecast, isDataLoading, isHistoryLoading, isForecastError, isForecastLoading, location, cityInfo } = useWeather();
     console.log("weather data in primary -->", weatherData);
     console.log("weather history in primary -->", weatherHistory);
     console.log("weather forecast in primary -->", weatherForecast);
@@ -36,14 +37,9 @@ Primary.Default = () => {
                         <p>{detailDay}, {detailDate}, {detailYear}</p>
                     </div>
                 </div>
-                <div className="location-container pr-collegue pt-collegue
+                <div className="location-container h-full w-1/3
                 xl:right-boss xl:top-collegue">
-                    <div className="location-header">
-                        <p className="text-solid-2 font-custom-medium text-lg
-                        md:text-xl
-                        lg:text-2xl
-                        xl:text-2xl">{location}, Turkey</p>
-                    </div>
+                    <CustomDropdown cityInfo={ cityInfo } />
                 </div>
             </div>
             <div className="primary-body w-full h-[calc(100%+var(--spacing-boss))]

@@ -41,3 +41,7 @@ html, body {
         linear-gradient(rgb(0 0 0 / 1), transparent) padding-box;
     mask-composite: subtract;
 }
+
+::-webkit-scrollbar{
+    display: none;
+}

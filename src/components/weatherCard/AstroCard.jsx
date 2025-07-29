@@ -1,6 +1,4 @@
-import { PiCaretCircleDownFill, PiCaretCircleUpFill } from "react-icons/pi";
-
-export default function WeatherCard({name, value, unit, icon, change}) {
+export default function AstroCard({name, value, unit, icon}) {
 
     return(
         <div className="weather-card-container glass flex items-center w-full h-full rounded-md text-solid-2">
@@ -25,22 +23,6 @@ export default function WeatherCard({name, value, unit, icon, change}) {
                     lg:text-2xl
                     xl:text-2xl">{unit}</p>
                 </span>
-            </div>
-            <div className="change-container font-custom-light text-sm pr-friend w-[30%] flex justify-start items-center
-            md:text-md md:pr-friend
-            lg:text-lg lg:pr-collegue
-            xl:text-lg xl:pr-collegue">
-                <span className="pr-friend">
-                    {  
-                        change < 0 ? <PiCaretCircleDownFill 
-                                            fill="var(--color-solid-2)" 
-                                            size={30} /> : 
-                                        <PiCaretCircleUpFill 
-                                            fill="var(--color-light-tertiary)" 
-                                            size={30} />
-                    }
-                </span>
-                <p className="font-custom-medium text-md text-end">{`${change}` ? Math.abs(change) : ""}</p>
             </div>
         </div>
     );
