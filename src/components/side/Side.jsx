@@ -2,6 +2,7 @@ import { useWeather } from "../../context/WeatherContext.jsx";
 import Loading from '../common/Loading.jsx'
 import { conditionIcons } from "../../constant/conditionIcons.jsx";
 import AstroCard from "../weatherCard/AstroCard.jsx";
+import RainChanceCard from "../weatherCard/RainChanceCard.jsx";
 
 export default function Side() {
 
@@ -16,7 +17,7 @@ export default function Side() {
     );
 
     return(
-        <div className="side-container h-[var(--spacing-boss)] w-full flex-col fixed top-[calc(var(--spacing-boss)*3-var(--spacing-social)+12px)]
+        <div className="side-container h-full w-full flex-col mt-boss top-[calc(var(--spacing-boss)*3-var(--spacing-social)+12px)]
         md:top-[calc(var(--spacing-boss)*3)]
         lg:h-full lg:mt-0 lg:flex lg:static
         xl:h-full xl:mt-0 xl:flex xl:static ">
@@ -42,7 +43,7 @@ export default function Side() {
                     </div>
                 </div>
                 <div className="weather-demo w-full h-1/2 flex flex-col justify-end pb-social">
-                    <div className="demo-icon pb-friend
+                    <div className="demo-icon pb-friend w-fit
                     lg:pl-collegue lg:h-3/4
                     xl:pl-social xl:h-3/4">
                         {conditionIcons[weatherData.current.condition.text]}
@@ -63,16 +64,26 @@ export default function Side() {
                     </div>
                 </div>
             </div>
-            <hr className="w-[calc(100%-(2*var(--spacing-collegue)))] ml-collegue mr-collegue " style={{color: 'var(--color-solid-2)'}} />
-            <div className="side-body h-[60%] hidden
-            lg:static
-            xl:static">
-                <div className="rainchance-container w-full h-2/3">
-                    
+            <hr className="w-[calc(100%-(2*var(--spacing-collegue)))] ml-collegue mr-collegue hidden
+            md:block md:mt-collegue
+            lg:block
+            xl:block " style={{color: 'var(--color-solid-2)'}} />
+            <div className="side-body h-[60%]">
+                <div className="rainchance-container w-full h-2/3 hidden
+                lg:block
+                xl:block">
+                    <div className="rainchance-header w-full h-[20%]">
+                        <h3 className="text-2xl font-custom-medium pl-social pt-collegue">Chance of rain</h3>
+                    </div>
+                    <div className="rainchance-body w-full h-[80%]">
+                        <RainChanceCard />
+                    </div>
                 </div>
-                <div className="riseset-container w-full h-1/3 grid pb-collegue
-                lg:grid-cols-2 lg:gap-friend lg:pl-friend lg:pr-friend
-                xl:grid-cols-1">
+                <div className="riseset-container w-full h-1/3 pb-social hidden
+                sm:grid
+                md:w-[96%] md:ml-[2%] md:mt-collegue md:gap-collegue
+                lg:grid-cols-2 lg:grid lg:gap-friend lg:pl-friend lg:pr-friend
+                xl:grid-cols-1 xl:grid">
                     <AstroCard name={'Sun Rise'}
                         value={weatherForecast?.forecast.forecastday[0].astro.sunrise}
                         icon={conditionIcons['Sunny']}

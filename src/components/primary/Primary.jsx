@@ -37,8 +37,7 @@ Primary.Default = () => {
                         <p>{detailDay}, {detailDate}, {detailYear}</p>
                     </div>
                 </div>
-                <div className="location-container h-full w-1/3
-                xl:right-boss xl:top-collegue">
+                <div className="location-container flex justify-center items-center h-full w-1/3">
                     <CustomDropdown cityInfo={ cityInfo } />
                 </div>
             </div>

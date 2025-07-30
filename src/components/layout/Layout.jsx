@@ -18,7 +18,7 @@ export default function Layout() {
             xl:h-full xl:w-5/9 xl:order-2 ">
                 <Primary.Default />
             </main>
-            <section className="side-container h-[87.5%] w-full top-2/3 border-t-[2px] border-light-tertiary order-2
+            <section className="side-container h-[60%] w-full top-2/3 border-t-[2px] border-light-tertiary order-2
             lg:h-full lg:w-5/18 lg:border-l-[2px] lg:border-t-0 lg:order-3
             xl:h-full xl:w-3/9 xl:border-l-[2px] xl:border-t-0 xl:order-3 ">
                 <Side />
