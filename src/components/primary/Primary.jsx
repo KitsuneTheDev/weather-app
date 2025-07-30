@@ -96,7 +96,7 @@ Primary.Default = () => {
                 </div>
                 <div className="graph-container h-[40%] w-[96%] hidden
                 md:hidden
-                lg:flex lg:items-center lg:mb-boss
+                lg:flex lg:items-center lg:mb-boss lg:h-[35%]
                 xl:block">
                     <Graph data={weatherForecast?.forecast.forecastday.map((day, index) => {
                         return day;

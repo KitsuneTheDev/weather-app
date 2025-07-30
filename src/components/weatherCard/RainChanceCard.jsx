@@ -47,7 +47,8 @@ export default function RainChanceCard() {
     return(
         <div className="raincard-container w-full h-full">
             {chance.map((c, i) => {
-                return(<div key={i} className="bar-container w-[full] h-[25%] flex items-center pl-social">
+                return(<div key={i} className="bar-container w-[full] h-[25%] flex items-center pl-collegue
+                xl:pl-social">
                     <div className="time-container w-[10%] text-lg font-custom-semibold text-solid-2">{c.time}</div>
                     <div className="chance-container relative h-[40%] w-[70%] bg-light-secondary/50 rounded-2xl">
                         <span className={`chance-bar absolute h-full bg-solid-2 rounded-2xl z-10 transition-[width] duration-500 ease-in-out `}

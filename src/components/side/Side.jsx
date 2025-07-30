@@ -21,10 +21,12 @@ export default function Side() {
         md:top-[calc(var(--spacing-boss)*3)]
         lg:h-full lg:mt-0 lg:flex lg:static
         xl:h-full xl:mt-0 xl:flex xl:static ">
-            <div className="side-header h-[40%] pl-collegue pr-collegue
-            lg:pl-0 lg:pr-0
-            xl:pl-0 xl:pr-0">
-                <div className="info-container flex pt-collegue w-full h-1/2">
+            <div className="side-header h-[40%] pl-collegue pr-collegue pt-boss
+            lg:pl-0 lg:pr-0 lg:pt-0
+            xl:pl-0 xl:pr-0 xl:pt-0">
+                <div className="info-container flex pt-collegue w-full h-1/2
+                lg:flex-col lg:h-1/4
+                xl:flex-row xl:h-1/2">
                     <div className="info-location w-1/2 
                     lg:pl-collegue lg:h-1/4
                     xl:pl-social xl:h-1/4">
@@ -38,17 +40,20 @@ export default function Side() {
                     xl:pr-social">
                         <h2 className="text-end font-custom-semibold text-solid-2 text-md
                         md:text-xl
-                        lg:text-2xl
-                        xl:text-2xl ">{time}</h2>
+                        lg:text-2xl lg:text-start lg:pl-collegue
+                        xl:text-2xl xl:text-end">{time}</h2>
                     </div>
                 </div>
                 <div className="weather-demo w-full h-1/2 flex flex-col justify-end pb-social">
                     <div className="demo-icon pb-friend w-fit
-                    lg:pl-collegue lg:h-3/4
+                    lg:pl-collegue lg:h-1/4
                     xl:pl-social xl:h-3/4">
                         {conditionIcons[weatherData.current.condition.text]}
                     </div>
-                    <div className="demo-info flex justify-between">
+                    <div className="demo-info flex justify-between pb-friend
+                    md:pb-collegue
+                    lg:pb-0
+                    xl:pb-0">
                         <div className="temperature font-custom-semibold text-solid-2 text-2xl
                         md:text-4xl
                         lg:pl-collegue lg:text-6xl
@@ -57,8 +62,8 @@ export default function Side() {
                         </div>
                         <div className="condition font-custom-medium text-solid-2 text-lg
                         md:text-2xl
-                        lg:pr-collegue lg:text-4xl
-                        xl:pr-social xl:text-4xl ">
+                        lg:pr-collegue lg:text-4xl lg:pl-friend
+                        xl:pr-social xl:text-4xl xl:pl-0 ">
                             {weatherData.current.condition.text}
                         </div>
                     </div>
@@ -68,7 +73,10 @@ export default function Side() {
             md:block md:mt-collegue
             lg:block
             xl:block " style={{color: 'var(--color-solid-2)'}} />
-            <div className="side-body h-[60%]">
+            <div className="side-body h-[60%] hidden
+            md:block
+            lg:block
+            xl:block">
                 <div className="rainchance-container w-full h-2/3 hidden
                 lg:block
                 xl:block">
@@ -82,7 +90,7 @@ export default function Side() {
                 <div className="riseset-container w-full h-1/3 pb-social hidden
                 sm:grid
                 md:w-[96%] md:ml-[2%] md:mt-collegue md:gap-collegue
-                lg:grid-cols-2 lg:grid lg:gap-friend lg:pl-friend lg:pr-friend
+                lg:grid-cols-1 lg:grid lg:gap-friend lg:pl-friend lg:pr-friend
                 xl:grid-cols-1 xl:grid">
                     <AstroCard name={'Sun Rise'}
                         value={weatherForecast?.forecast.forecastday[0].astro.sunrise}
