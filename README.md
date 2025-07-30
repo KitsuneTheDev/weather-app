@@ -32,23 +32,18 @@ Here are some screenshots showcasing Weather Kitsu on different devices:
 
 ### Desktop View
 ![Desktop View](src/assets/demo/weatherDesktop.png)
-*A screenshot of the application's desktop interface, showing the full layout with all features visible.*
 
 ### iPad Pro View
 ![iPad Pro View](src/assets/demo/weatherIpadPro.png)
-*A screenshot of the application on an iPad Pro, demonstrating its adaptability for larger tablet screens.*
 
 ### iPad Mini View
 ![iPad Mini View](src/assets/demo/weatherIpadMini.png)
-*A screenshot of the application on an iPad Mini, showing its responsive design on a smaller tablet.*
 
 ### iPhone Pro View
 ![iPhone Pro View](src/assets/demo/weatherIphonePro.png)
-*A screenshot of the application on an iPhone Pro, highlighting the mobile-friendly layout.*
 
 ### iPhone SE View
 ![iPhone SE View](src/assets/demo/weatherIphoneSE.png)
-*A screenshot of the application on an iPhone SE, demonstrating its responsiveness on smaller mobile screens.*
 
 ## Getting Started
 
