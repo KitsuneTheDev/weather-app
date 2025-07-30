@@ -22,7 +22,7 @@ export function useWeatherData() {
 
     console.log("yesterday in useWeatherData -->", yesterday);
 
-    const baseUrl = 'http://api.weatherapi.com/v1';
+    const baseUrl = 'https://api.weatherapi.com/v1';
     const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
     const {
