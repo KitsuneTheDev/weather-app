@@ -8,7 +8,7 @@ export default function WeatherCard({name, value, unit, icon, change}) {
                 {icon}
             </div>
             <div className="card-body h-full flex flex-col justify-center w-[50%]">
-                <p className="text-sm font-custom-light pl-friend 
+                <p className="text-sm font-custom-semibold pl-friend 
                 md:text-md md:pl-friend
                 lg:text-lg lg:pl-social
                 xl:text-lg xl:pl-social">{name}</p>
@@ -40,7 +40,7 @@ export default function WeatherCard({name, value, unit, icon, change}) {
                                             size={30} />
                     }
                 </span>
-                <p className="font-custom-medium text-md text-end">{`${change}` ? Math.abs(change) : ""}</p>
+                <p className="font-custom-semibold text-solid-2 text-lg text-end">{`${change}` ? Math.abs(change) : ""}</p>
             </div>
         </div>
     );
